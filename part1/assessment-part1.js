@@ -43,27 +43,27 @@ function daBears(){
 // Which function(s) access the "chair" variable and get "Too Big!"
 // (Delete wrong answers, leave correct ones)
 
-var fairyTale1 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
+var fairyTale1 = ["papaBear", "mamaBear"];
 
 // Which function(s) access the "feeling" variable and get "Hungry"
 // (Delete wrong answers, leave correct ones)
 
-var fairyTale2 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
+var fairyTale2 = ["goldilocks"];
 
 // Which function(s) access the "porridge" variable and get "Too Cold!"
 // (Delete wrong answers, leave correct ones)
 
-var fairyTale3 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
+var fairyTale3 = ["mamaBear"];
 
 // Which function(s) access the "sleepy" variable and get undefined
 // (Delete wrong answers, leave correct ones)
 
-var fairyTale4 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
+var fairyTale4 = ["daBears", "papaBear", "mamaBear", "goldilocks"];
 
 // Which function(s) access the isFurry variable and get true
 // (Delete wrong answers, leave correct ones)
 
-var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
+var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear"];
 
 
 // *************
@@ -82,9 +82,19 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 // "charger" once, and invoke it twice on "mustang".
 
 // CODE HERE...
+function Vehicle() {
+  this.gasRemaining = 100;
+}
+Vehicle.prototype.drive = function drive() {
+  this.gasRemaining -= 25;
+  return this.gasRemaining;
+}
+var charger = new Vehicle;
+var mustang = new Vehicle;
 
-
-
+charger.drive();
+mustang.drive();
+mustang.drive();
 
 
 // -----------------------------------------------------------------------------
@@ -108,7 +118,28 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 
 
 // CODE HERE...
+// var string = "OH HELLO THERE";
 
+// Object.defineProperty(String.prototype, 'grammarPolice', {
+//   value: function() {
+//     return this.charAt(0).toUpperCase() + this.slice(1) + this.split(' ');
+//   },
+//   writable: true,
+//   configurable: true
+// });
+
+// string.grammarPolice();
+
+String.prototype.grammarPolice = function(str) {
+  var str = str.toLowerCase().split(' ');
+  for (var i = 0; i < str.length; i++) {
+    str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+  }
+  return str.join(' ');
+}
+
+string.grammarPolice("OH HELLO THERE");
+// capitalized("OH HELLO THERE");
 
 
 // *************
@@ -126,7 +157,15 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 // In all other cases, return "Different values"
 
 // CODE HERE...
-
+function valueType(param1, param2) {
+  if(param1 === param2) {
+    return "Exactly the same";
+  } else if(param1 == param2) {
+    return "Same value, different types"
+  } else {
+    return "Different values"
+  }
+}
 
 
 // *************
@@ -141,3 +180,13 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 var theAnswer = "Unknown";
 
 // CODE HERE...
+
+function promiseCatcher(param) {
+  
+}
+
+// try {
+//   var result = promiseCatcher(param)
+// } catch(e) {
+//   var theAnswer = result;
+// }
