@@ -13,7 +13,11 @@
 // return the result of your updateAnimal invocation
 
 // CODE HERE...
-
+function callBinding(magicAnimals, updateAnimal, id) {
+    let animalfound = magicAnimals.find(animal => animal.id == id);
+    updateAnimal(animalfound)
+    return animalfound;
+}
 
 
 // *************
@@ -28,7 +32,11 @@
 // return the result of your updateAnimal invocation
 
 // CODE HERE...
-
+function applyBinding(magicAnimals, updateAnimal, id) {
+    let animalfound = magicAnimals.find(animal => animal.id == id);
+    updateAnimal(['being majestic', 'eating rainbows'])
+    return animalfound;
+}
 
 
 // *************
@@ -48,7 +56,9 @@
 var foo;
 
 // CODE HERE...
+function promiseMe($q) {
 
+}
 
 
 // *************
@@ -64,3 +74,6 @@ var foo;
 // and then resolve the array as you complete your promise.
 
 // CODE HERE...
+function emailList($q, $http) {
+
+}
